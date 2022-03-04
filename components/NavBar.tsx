@@ -21,8 +21,6 @@ const Wrapper = styled.ul`
     list-style: none;
 
     a {
-        color: ${p => p.theme.headerForeground};
-        text-decoration: none;
         margin-right: 56px;
         font-size: 18px;
         font-weight: 600;

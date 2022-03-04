@@ -3,10 +3,15 @@ import {transparentize} from "polished";
 import { HEADER_HEIGHT } from "../_constants";
 import NavBar from "./NavBar";
 import Link from "next/link";
+import { HTMLAttributes } from "react";
 
-export default function Header(Props: any) {
+export interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
+    scroll: boolean
+}
+
+export default function Header({scroll, ...props} : HeaderProps) {
     return (
-        <Wrapper>
+        <Wrapper id="header" {...props} scroll={scroll} >
             <Container>
                 <Link href="/">Logo</Link>
                 <NavBar />
@@ -15,13 +20,20 @@ export default function Header(Props: any) {
     );
 }
 
-const Wrapper = styled.div`
-    background-color: ${p => p.theme.headerBackground};
-    color: ${p => p.theme.headerForeground};
-    box-shadow: 0 3px 10px ${p => transparentize(0.9, p.theme.pageForeground)};
-
+const Wrapper = styled.div<{ scroll: boolean }>`
+    background-color: ${p => p.scroll ? p.theme.headerBackground : "transparent"};
+    box-shadow: 0 3px 10px ${p => p.scroll ? transparentize(0.9, p.theme.pageForeground) : "none"};
     width: 100%;
     height: ${HEADER_HEIGHT}px;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    a {
+        color: ${p => p.scroll ? p.theme.headerForeground : p.theme.attentionForeground};
+        text-decoration: none;
+    }
 `
 const Container = styled.div`
     display: flex;
@@ -30,9 +42,4 @@ const Container = styled.div`
     max-width: 1200px;
     margin: auto;
     height: 100%;
-
-    a {
-        color: ${p => p.theme.headerForeground};
-        text-decoration: none;
-    }
 `
