@@ -24,6 +24,8 @@ const Wrapper = styled.ul`
         color: ${p => p.theme.headerForeground};
         text-decoration: none;
         margin-right: 56px;
+        font-size: 18px;
+        font-weight: 600;
 
         &:last-child {
             margin-right: 0;
