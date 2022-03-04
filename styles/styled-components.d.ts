@@ -6,6 +6,10 @@ declare module "styled-components" {
         pageForeground: string
         primaryBackground: string
         primaryForeground: string
+        headerBackground: string
+        headerForeground: string
+        footerBackground: string
+        footerForeground: string
         attentionForeground: string
     }
 }
