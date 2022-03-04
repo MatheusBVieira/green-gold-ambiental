@@ -36,7 +36,7 @@ const Wrapper = styled.main`
 `
 
 const HomeWrapper = styled.div`
-  min-height: calc(100vh - ${HEADER_HEIGHT}px); 
+  min-height: 100vh;
 
   display: flex;
   align-items: center;
