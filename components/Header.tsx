@@ -30,6 +30,8 @@ const Wrapper = styled.div<{ scroll: boolean }>`
     top: 0;
     left: 0;
 
+    transition: all .5s ease;
+
     a {
         color: ${p => p.scroll ? p.theme.headerForeground : p.theme.attentionForeground};
         text-decoration: none;
