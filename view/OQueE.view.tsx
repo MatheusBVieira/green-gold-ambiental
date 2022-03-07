@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import InfoContent from './InfoContent'
+import InfoContent from '../components/InfoContent'
 import OQueEHidrossemeadura from '../public/images/OQueEHidrossemeadura'
 
 export default function OQueE(props: any) {
@@ -20,7 +20,6 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    height: 693px;
 `
 
 const Title = styled.h2`

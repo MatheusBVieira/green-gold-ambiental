@@ -19,7 +19,7 @@ export default function InfoContent(props: any) {
 }
 
 const Wrapper = styled.div`
-    height: 693px;
+    height: 728px;
 `
 
 const Top = styled.div`
