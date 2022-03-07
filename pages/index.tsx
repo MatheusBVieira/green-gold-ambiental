@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styled from 'styled-components'
-import Landing from '../view/Landing.view'
-import OQueE from '../view/OQueE.view'
+import Beneficios from '../views/Beneficios'
+import Landing from '../views/Landing.view'
+import OQueE from '../views/OQueE.view'
 
 
 export default function Home(props: any) {
@@ -17,6 +18,7 @@ export default function Home(props: any) {
 
       <Landing />
       <OQueE />
+      <Beneficios />
       
 
     </Wrapper>

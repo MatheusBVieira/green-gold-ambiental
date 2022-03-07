@@ -11,5 +11,6 @@ export const light: DefaultTheme = {
     footerBackground: "#000000",
     footerForeground: "#98EE99",
     attentionForeground: "#338A3E",
+    attentionPrimaryForeground: "#98EE99",
     
 }

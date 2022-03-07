@@ -11,5 +11,6 @@ declare module "styled-components" {
         footerBackground: string
         footerForeground: string
         attentionForeground: string
+        attentionPrimaryForeground: string
     }
 }
