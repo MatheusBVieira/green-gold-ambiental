@@ -1,10 +1,8 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
-import styles from '../styles/Home.module.css'
-import { HEADER_HEIGHT } from '../_constants'
+import OQueE from '../components/OQueE'
+
 
 export default function Home(props: any) {
 
@@ -17,7 +15,6 @@ export default function Home(props: any) {
       </Head>
 
       <HomeWrapper>
-
         <Title>
           Bem-vindos a <strong>Green Gold Ambiental</strong>
         </Title>
@@ -25,6 +22,7 @@ export default function Home(props: any) {
         <Resumo>A <strong>GreenGoldAmbiental</strong> oferece serviços de revegetação de taludes, aterros e áreas planas para prevenção e proteção do solo contra erosões e recuperação ambiental.</Resumo>
         <Link href={"/contato"}>Peça o orçamento</Link>
       </HomeWrapper>
+      <OQueE />
       
 
     </Wrapper>
@@ -46,10 +44,6 @@ const HomeWrapper = styled.div`
 
   background-image: url('/images/banner.svg');
   background-size: cover;
-
-  strong {
-    color: ${props => props.theme.attentionForeground};
-  }
 
   a {
     padding: 16px 32px;
