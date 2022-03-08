@@ -1,16 +1,15 @@
 import styled from "styled-components";
 import InfoContent from '../components/InfoContent'
-import OQueEHidrossemeadura from '../public/images/OQueE.image'
-import QueTipos from "../public/images/QueTipos.image";
+import QuemUsaImage from '../public/images/QuemUsa.image'
 
-export default function OQueE(props: any) {
+export default function QuemUsa(props: any) {
     return (
         <InfoContent
             backgroundColor="default"
             height={100}
             leftStyle={Left}
-            left={ 
-                <OQueEHidrossemeadura />
+            left={
+                <QuemUsaImage />
             }
             rightStyle={Right}
             right={
