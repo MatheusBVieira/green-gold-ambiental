@@ -22,7 +22,6 @@ export default function Home(props: any) {
       <OQueE />
       <Beneficios />
       <QueTipo />
-      <QuemUsa />
 
     </Wrapper>
   )

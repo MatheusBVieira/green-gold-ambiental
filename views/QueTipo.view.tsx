@@ -15,8 +15,10 @@ export default function QueTipo(props: any) {
             rightStyle={Right}
             right={
                 <div>
-                    <Title>O que é <br /><strong>hidrossemeadura?</strong></Title>
-                    <Paragraph>A Hidrossemeadura é um processo de plantio por jateamento de uma solução de alta viscosidade contendo Sementes, Fertilizantes, Mulch de Fibra de Madeira com Fixadores e Aditivos. Esta solução é aplicada por hidrojateamento no solo onde fica aderida e possibilita a germinação das sementes e desenvolvimento da vegetação em todos os tipos de solo. </Paragraph>
+                    <Title>Que <strong>tipo</strong> de <br /> hidrossemeadura você <br/>procura?</Title>
+                    <Paragraph><strong>Verdemax</strong> tecnologia e perfomance para revegetação de áreas críticas e alta inclinação.</Paragraph>
+                    <Paragraph><Verdeflex>Verdeflex</Verdeflex> o melhor custo benficio para a revegetação de áreas difíceis e inclinações moderadas</Paragraph>
+                    <Paragraph><Verdeplan>Verdeplan</Verdeplan> solução eficiente e conômica de solos preparados e áreas planas</Paragraph>
                 </div>
             }>
         </InfoContent>
@@ -26,7 +28,6 @@ export default function QueTipo(props: any) {
 const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-
 `
 
 const Title = styled.h2`
@@ -40,11 +41,27 @@ const Paragraph = styled.p`
     font-size: 20px;
     line-height: 36px;
 
-    margin-top: 12px;
+    margin-top: 30px;
     margin-left: 40px;
 
-    width: 498px;
-    height: 269px;
+    width: 350px;
+    height: 103px;
+
+    &:nth-child(3) {
+        margin-left: 133px;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+`
+
+const Verdeflex = styled.strong`
+    color: #66BB6A
+`
+
+const Verdeplan = styled.strong`
+    color: #98EE99
 `
 
 const Left = styled.div`
@@ -52,6 +69,6 @@ const Left = styled.div`
 `
 
 const Right = styled.div`
-    margin-top: 180px;
+    margin-top: 70px;
     display: flex;
 `
