@@ -59,8 +59,6 @@ const WrapperLeft = styled.div`
 const Left = styled.div`
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-
 
     margin: auto 0 auto 0;
 `

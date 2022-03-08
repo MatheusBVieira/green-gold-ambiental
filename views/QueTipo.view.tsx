@@ -3,14 +3,14 @@ import InfoContent from '../components/InfoContent'
 import OQueEHidrossemeadura from '../public/images/OQueE.image'
 import QueTipos from "../public/images/QueTipos.image";
 
-export default function OQueE(props: any) {
+export default function QueTipo(props: any) {
     return (
         <InfoContent
             backgroundColor="default"
             height={100}
             leftStyle={Left}
             left={ 
-                <OQueEHidrossemeadura />
+                <QueTipos />
             }
             rightStyle={Right}
             right={
