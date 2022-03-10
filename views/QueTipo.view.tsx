@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import InfoContent from '../components/InfoContent'
-import OQueEHidrossemeadura from '../public/images/OQueE.image'
 import QueTipos from "../public/images/QueTipos.image";
 
 export default function QueTipo(props: any) {
