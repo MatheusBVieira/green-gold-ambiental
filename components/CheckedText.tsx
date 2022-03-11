@@ -6,8 +6,6 @@ export interface InfoContentProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export default function CheckedText(props: InfoContentProps) {
-
-
     return (
         <Wrapper>
             <Checked />

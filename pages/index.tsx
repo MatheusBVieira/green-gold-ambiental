@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styled from 'styled-components'
-import QuemUsa from '../public/images/QuemUsa.image'
 import Beneficios from '../views/Beneficios'
 import Landing from '../views/Landing.view'
 import OMulch from '../views/OMulch'
 import OQueE from '../views/OQueE.view'
+import QuemUsa from '../views/QuemUsa.view'
 import QueTipo from '../views/QueTipo.view'
 
 
@@ -24,6 +24,7 @@ export default function Home(props: any) {
       <Beneficios />
       <QueTipo />
       <OMulch />
+      <QuemUsa />
       
     </Wrapper>
   )

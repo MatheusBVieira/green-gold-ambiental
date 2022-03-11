@@ -24,7 +24,7 @@ const HomeWrapper = styled.div`
   flex-direction: column;
   gap: 26px;
 
-  background-image: url('/images/banner.svg');
+  background-image: url('/images/banner2.svg');
   background-size: cover;
 
   a {
