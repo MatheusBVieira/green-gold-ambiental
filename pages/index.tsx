@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import styled from 'styled-components'
-import Beneficios from '../views/Beneficios'
+import Beneficios from '../views/Beneficios.view'
 import Landing from '../views/Landing.view'
-import OMulch from '../views/OMulch'
+import OMulch from '../views/OMulch.view'
 import OQueE from '../views/OQueE.view'
+import PorQue from '../views/PorQue.view'
 import QuemUsa from '../views/QuemUsa.view'
 import QueTipo from '../views/QueTipo.view'
 
@@ -25,6 +25,7 @@ export default function Home(props: any) {
       <QueTipo />
       <OMulch />
       <QuemUsa />
+      <PorQue />
       
     </Wrapper>
   )
