@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 export default function Landing(props: any) {
 
-    return (<HomeWrapper>
+  return (
+    <HomeWrapper>
         <Title>
             Bem-vindos a <strong>Green Gold Ambiental</strong>
         </Title>
