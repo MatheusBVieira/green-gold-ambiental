@@ -94,7 +94,4 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
 
-    background - image: url('/images/banner2.svg');
-    background - size: cover;
-
 `
