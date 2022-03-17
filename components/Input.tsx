@@ -1,10 +1,15 @@
+import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 
-export default function Input(props: any) {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+    text: string;
+}
+
+export default function Input(props: InputProps) {
     return (
         <Wrapper>
             <Text>{props.text}</Text>
-            <TextInput placeholder={props.children}></TextInput>
+            <TextInput { ...props }/>
         </Wrapper>
     );
 }

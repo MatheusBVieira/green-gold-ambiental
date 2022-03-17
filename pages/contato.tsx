@@ -1,14 +1,40 @@
+import React, { useRef } from 'react';
 import Head from 'next/head'
 import { transparentize } from 'polished'
 import styled from "styled-components"
 import Input from '../components/Input'
-import Select from '../components/Select'
+import TextSelect from '../components/TextSelect'
 import TextArea from '../components/TextArea'
+import emailjs, { init } from '@emailjs/browser';
 
 export default function Contato(props: any) {
-
+    init("R_QGa4kXL-kPLt7hQ");
+    const form: any = useRef();
     
+    const sendEmail = (e: any) => {
+        e.preventDefault();
 
+        emailjs.sendForm('service_uwxl6td', 'template_19jnuuo', String(form.current), 'R_QGa4kXL-kPLt7hQ')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
+
+    const optionsState = [
+        { value: 'SC', label: 'Santa Catarina' },
+        { value: 'PR', label: 'Paraná' },
+        { value: 'RS', label: 'Rio Grande do Sul' },
+    ];
+
+    const optionsInterest = [
+        { value: 'Conhecendo', label: 'Estou apenas conhecendo' },
+        { value: 'Estudando', label: 'Estou estudando para um projeto' },
+        { value: 'Orcamento', label: 'Já conheço e quero fazer um orçamento' },
+        { value: 'Sem interesse', label: 'Não tenho interesse' },
+        { value: 'Comprar agora', label: 'Quero comprar agora' },
+    ];
 
     return (
         <Wrapper>
@@ -20,28 +46,50 @@ export default function Contato(props: any) {
 
             <Content>
                 <Title>Faça seu orçamento!</Title>
-                <InputWrapper>
-                    <Input text={"Nome"}>Digite seu nome completo</Input>
-                    <Input text={"Email"}>Digite seu e-mail</Input>
-                    <Input text={"Empresa"}>Digite o nome da sua empresa</Input>
-                    <Input type={"phone"} text={"Telefone"}>(YY) XXXXX-XXXX</Input>
-                    <Select text={"Estado"}>
-                        <option value="" disabled selected>Escolha seu estado</option>
-                        <option>Santa Catarina</option>
-                        <option>Paraná</option>
-                        <option>Rio Grande do Sul</option>
-                    </Select>
-                    <Select text={"Qual o seu interesse?"}>
-                        <option value="" disabled selected>Escolha seu interesse</option>
-                        <option>Estou apenas conhecendo</option>
-                        <option>Estou estudando para um projeto</option>
-                        <option>Já conheço e quero fazer um orçamento</option>
-                        <option>Não tenho interesse</option>
-                        <option>Quero comprar agora</option>
-                    </Select>
-                    <Input text={"Qual a sua profissão"}>Digite sua profissão</Input>
-                    <Input text={"Tamanho da área para hidrossemeadura (m2)"}>Digite o tamanha da área em metros</Input>
-                    <TextArea text={"Quer falar conosco? Mande uma mensagem!"} placeholder='Digite sua mensagem...'></TextArea>
+                <InputWrapper ref={form} onSubmit={sendEmail}>
+                    <Input
+                        type={"text"}
+                        name={"name"}
+                        placeholder={"Digite seu nome completo"}
+                        text={"Nome"}
+                    />
+                    <Input
+                        type={"email"}
+                        name={"email"}
+                        placeholder={"Digite seu e-mail"}
+                        text={"Email"}
+                    />
+                    <Input
+                        type={"text"}
+                        name={"company"}
+                        placeholder={"Digite o nome da sua empresa"}
+                        text={"Empresa"}
+                    />
+                    <Input
+                        type={"text"}
+                        name={"phone"}
+                        placeholder={"(YY) XXXXX-XXXX"}
+                        text={"Telefone"}
+                    />
+                    <TextSelect options={optionsState} name={"state"} text={"Estado"} />
+                    <TextSelect options={optionsInterest} name={"interest"} text={"Qual o seu interesse?"} />
+                    <Input
+                        type={"text"}
+                        name={"profession"}
+                        placeholder={"Digite sua profissão"}
+                        text={"Qual a sua profissão"}
+                    />
+                    <Input
+                        type={"text"}
+                        name={"area"}
+                        placeholder={"Digite o tamanho da área em metros"}
+                        text={"Tamanho da área para hidrossemeadura (m2)"}
+                    />
+                    <TextArea
+                        name={"message"}
+                        text={"Quer falar conosco? Mande uma mensagem!"}
+                        placeholder='Digite sua mensagem...'
+                    />
                     <Button>Enviar informações</Button>
                 </InputWrapper>
             </Content>
@@ -72,7 +120,7 @@ const Content = styled.div`
     align-items: center;
 `
 
-const InputWrapper = styled.div`
+const InputWrapper = styled.form`
     width: 770px;
     height: 1628px;
     padding-top: 80px;
