@@ -17,7 +17,6 @@ export default function TextSelect(props: InputProps) {
         }),
         control: (styles: any) => ({ ...styles, backgroundColor: '#fff' }),
         option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
-            // const backgroundColor = isDisabled ? '#fff' : isSelected ? '#338A3E' : isFocused ? '#338A3E' : '#E5E5E5';
             const color = isSelected ? '#338A3E' : isFocused ? '#338A3E' : transparentize(0.6, '#000');
             return { ...styles, backgroundColor: 'none', color: color, fontWeight: 'bold' };
         },
@@ -75,21 +74,3 @@ const Text = styled.span`
     line-height: 30px;
     color: ${p => p.theme.primaryForeground};
 `
-
-// const TextSelect = styled.select`
-//     width: 570px;
-//     padding: 20px 0 20px 18px;
-
-    
-//     font-weight: 500;
-//     font-size: 24px;
-//     line-height: 28px;
-//     box-shadow: 0 0 0 0;
-//     border: 0 none;
-//     outline: 0;
-    
-//     option {
-//         background: "#000";
-//         color: "#ffffff";
-//     }
-// `

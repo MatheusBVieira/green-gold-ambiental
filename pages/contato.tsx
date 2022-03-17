@@ -71,8 +71,16 @@ export default function Contato(props: any) {
                         placeholder={"(YY) XXXXX-XXXX"}
                         text={"Telefone"}
                     />
-                    <TextSelect options={optionsState} name={"state"} text={"Estado"} />
-                    <TextSelect options={optionsInterest} name={"interest"} text={"Qual o seu interesse?"} />
+                    <TextSelect
+                        options={optionsState}
+                        name={"state"}
+                        text={"Estado"}
+                    />
+                    <TextSelect
+                        options={optionsInterest}
+                        name={"interest"}
+                        text={"Qual o seu interesse?"}
+                    />
                     <Input
                         type={"text"}
                         name={"profession"}
