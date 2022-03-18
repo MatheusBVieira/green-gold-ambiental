@@ -1,21 +1,23 @@
-import { SelectHTMLAttributes } from "react";
 import styled from "styled-components";
 import Select from 'react-select'
 import { transparentize } from "polished";
 
 interface InputProps {
+    onChange: any;
     text: string;
     options: { value: string; label: string; }[];
     name: string;
+    isValid: boolean;
 }
 
 export default function TextSelect(props: InputProps) {
+    
     const colourStyles = {
         menu: (provided: any, state: any) => ({
             ...provided,
             background: '#E5E5E5',
         }),
-        control: (styles: any) => ({ ...styles, backgroundColor: '#fff' }),
+        control: (styles: any) => ({ ...styles, backgroundColor: '#fff', }),
         option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
             const color = isSelected ? '#338A3E' : isFocused ? '#338A3E' : transparentize(0.6, '#000');
             return { ...styles, backgroundColor: 'none', color: color, fontWeight: 'bold' };
@@ -24,7 +26,7 @@ export default function TextSelect(props: InputProps) {
         placeholder: (styles: any) => ({
             ...styles,
             color: '#a9a9a9',
-            fontSize: '24px',
+            fontSize: '20px',
             padding: '20px 0 20px 8px',
             fontWeight: 500,
         }),
@@ -32,17 +34,22 @@ export default function TextSelect(props: InputProps) {
             return {
                 ...styles,
                 color: 'black',
-                fontSize: '24px',
+                fontSize: '20px',
                 padding: '20px 0 20px 8px',
                 fontWeight: 500,
             };
         },
     };
 
+    if (!props.isValid) {
+        colourStyles.control = (styles: any) => ({ ...styles, borderBottom: '2px solid red', });
+    }
+        
     return (
         <Wrapper>
             <Text>{props.text}</Text>
             <Select
+                onChange={props.onChange}
                 styles={colourStyles}
                 options={props.options}
                 name={props.name}

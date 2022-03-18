@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Head from 'next/head'
 import { transparentize } from 'polished'
 import styled from "styled-components"
@@ -6,23 +6,70 @@ import Input from '../components/Input'
 import TextSelect from '../components/TextSelect'
 import TextArea from '../components/TextArea'
 import emailjs, { init } from '@emailjs/browser';
+import {IsEmail, verifyEmpty} from '../utils/validate';
+import { useRouter } from 'next/router';
 
 export default function Contato(props: any) {
     init("R_QGa4kXL-kPLt7hQ");
+
+    const router = useRouter();
+
     const form: any = useRef();
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [company, setCompany] = useState("");
+    const [phone, setPhone] = useState("");
+    const [profession, setProfession] = useState("");
+    const [area, setArea] = useState("");
+    const [message, setMessage] = useState("");
+    const [state, setState] = useState("");
+    const [interest, setInterest] = useState("");
+    const [selectInterestIsValid, setSelectInterestIsValid] = useState(true);
+    const [selectStateIsValid, setSelectStateIsValid] = useState(true);
+
+    function maskPhone(value: string) {
+        return value
+            .replace(/\D/g, '')
+            .replace(/^(\d{2})(\d)/g, '($1) $2')
+            .replace(/(\d)(\d{4})$/, '$1-$2')
+    }
     
     const sendEmail = (e: any) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_uwxl6td', 'template_19jnuuo', String(form.current), 'R_QGa4kXL-kPLt7hQ')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
-    };
+        var error = verifyEmpty(name, "name");
+        error = verifyEmpty(email, "email");
+        error = verifyEmpty(company, "company");
+        error = verifyEmpty(phone, "phone");
+        error = verifyEmpty(profession, "profession");
+        error = verifyEmpty(area, "area");
 
-    const optionsState = [
+        if (interest === "") {
+            setSelectInterestIsValid(false);
+            error = true;
+        }
+
+        if (state === "") {
+            setSelectStateIsValid(false);
+            error = true;
+        }
+
+        if (error) return;
+
+        emailjs.sendForm('service_uwxl6td', 'template_19jnuuo', form.current, 'R_QGa4kXL-kPLt7hQ')
+            .then((result) => {
+                alert('Email enviado com sucesso! Você será redirecionado para Home.');
+
+                router.push('/');
+
+                const form: any = document.getElementById('form')
+            }, (error) => {
+                alert('Erro ao enviar email!');
+            }
+        );
+    };
+    
+    let optionsState = [
         { value: 'SC', label: 'Santa Catarina' },
         { value: 'PR', label: 'Paraná' },
         { value: 'RS', label: 'Rio Grande do Sul' },
@@ -46,60 +93,87 @@ export default function Contato(props: any) {
 
             <Content>
                 <Title>Faça seu orçamento!</Title>
-                <InputWrapper ref={form} onSubmit={sendEmail}>
+                <FormWrapper id='form' ref={form} onSubmit={sendEmail}>
                     <Input
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
                         type={"text"}
                         name={"name"}
                         placeholder={"Digite seu nome completo"}
                         text={"Nome"}
                     />
                     <Input
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                         type={"email"}
                         name={"email"}
                         placeholder={"Digite seu e-mail"}
                         text={"Email"}
                     />
                     <Input
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCompany(e.target.value)}
                         type={"text"}
                         name={"company"}
                         placeholder={"Digite o nome da sua empresa"}
                         text={"Empresa"}
                     />
                     <Input
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
                         type={"text"}
                         name={"phone"}
+                        maxLength={15}
+                        value={maskPhone(phone)}
                         placeholder={"(YY) XXXXX-XXXX"}
                         text={"Telefone"}
                     />
                     <TextSelect
+                        isValid={selectStateIsValid}
+                        onChange={(e: any) => setState(e.value)}
                         options={optionsState}
-                        name={"state"}
+                        name={"stateSelect"}
                         text={"Estado"}
                     />
                     <TextSelect
+                        isValid={selectInterestIsValid}
+                        onChange={(e: any) => setInterest(e.value)}
                         options={optionsInterest}
-                        name={"interest"}
+                        name={"interestSelect"}
                         text={"Qual o seu interesse?"}
                     />
                     <Input
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setProfession(e.target.value)}
                         type={"text"}
                         name={"profession"}
                         placeholder={"Digite sua profissão"}
                         text={"Qual a sua profissão"}
                     />
                     <Input
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setArea(e.target.value)}
                         type={"text"}
                         name={"area"}
                         placeholder={"Digite o tamanho da área em metros"}
                         text={"Tamanho da área para hidrossemeadura (m2)"}
                     />
                     <TextArea
-                        name={"message"}
+                        onChange={(e: any) => setMessage(e.target.value)}
                         text={"Quer falar conosco? Mande uma mensagem!"}
                         placeholder='Digite sua mensagem...'
                     />
+                    <InputHidden
+                        value={message}
+                        name={"message"}
+                        type={"hidden"}
+                    />
+                    <InputHidden
+                        value={state}
+                        name={"state"}
+                        type={"hidden"}
+                    />
+                    <InputHidden
+                        value={interest}
+                        name={"interest"}
+                        type={"hidden"}
+                    />
                     <Button>Enviar informações</Button>
-                </InputWrapper>
+                </FormWrapper>
             </Content>
 
         </Wrapper>
@@ -128,9 +202,9 @@ const Content = styled.div`
     align-items: center;
 `
 
-const InputWrapper = styled.form`
+const FormWrapper = styled.form`
     width: 770px;
-    height: 1628px;
+    height: 1420px;
     padding-top: 80px;
     margin-bottom: 150px;
     background-color: ${p => transparentize(0.2 , p.theme.primaryBackground)};
@@ -138,8 +212,14 @@ const InputWrapper = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 42px;
+    gap: 22px;
+    border-radius: 10px;
 `
+const InputHidden = styled.input`
+
+`
+
+
 const Button = styled.button`
     padding: 28px 68px;
     background-color: ${p => p.theme.attentionForeground};

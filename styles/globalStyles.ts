@@ -21,4 +21,8 @@ export default createGlobalStyle`
   strong {
     color: ${props => props.theme.attentionForeground};
   }
+
+  .error {
+    border-bottom: 2px solid red;
+  }
 `;

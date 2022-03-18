@@ -35,12 +35,13 @@ const Text = styled.span`
 
 const TextInput = styled.input`
     width: 570px;
-    padding: 20px 0 20px 18px;
+    padding: 18px 0 18px 16px;
 
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
+    border-radius: 10px;
 `
