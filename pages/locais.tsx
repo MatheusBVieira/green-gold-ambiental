@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 import InfoContent from '../components/InfoContent'
-import Locals from '../public/images/locals.image'
+import Locals from '../public/images/Locals.image'
 
 export default function Locais(props: any) {
 
