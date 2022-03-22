@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import InfoContent from '../components/InfoContent'
 import Locals from '../public/images/locals.image'
 
-export default function Local(props: any) {
+export default function Locais(props: any) {
 
     return (
         <Wrapper>
