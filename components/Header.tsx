@@ -25,7 +25,8 @@ const Wrapper = styled.div<{ scroll: boolean }>`
     box-shadow: 0 3px 10px ${p => p.scroll ? transparentize(0.9, p.theme.pageForeground) : "none"};
     width: 100%;
     height: ${HEADER_HEIGHT}px;
-    
+    z-index:10;
+
     position: fixed;
     top: 0;
     left: 0;

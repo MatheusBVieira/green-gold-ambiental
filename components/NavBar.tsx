@@ -8,7 +8,7 @@ export default function NavBar() {
             <Wrapper>
                 <li>
                     <Link href="/duvidas">Dúvidas</Link>
-                    <Link href="/mapa">Mapas</Link>
+                    <Link href="/locais">Locais</Link>
                     <Link href="/fotos">Fotos</Link>
                 </li>
             </Wrapper>
