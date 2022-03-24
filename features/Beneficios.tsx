@@ -38,7 +38,7 @@ export default function Beneficios(props: any) {
 
 const Subtitle = styled.h2`
     padding-top: 82px;
-    padding-bottom: 40px;
+    padding-bottom: 76px;
 
     color: ${p => p.theme.primaryForeground};
     font-weight: 600;

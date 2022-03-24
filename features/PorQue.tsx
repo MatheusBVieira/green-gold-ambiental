@@ -33,7 +33,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-    height: 525px;
+    height: 496px;
     width: 970px;
 
     display: flex;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import InfoContent from '../components/InfoContent'
 import OQueEHidrossemeadura from '../public/images/OQueE.image'
-import QueTipos from "../public/images/QueTipos.image";
 
 export default function OQueE(props: any) {
     return (
@@ -23,12 +22,6 @@ export default function OQueE(props: any) {
     );
 }
 
-const Wrapper = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-`
-
 const Title = styled.h2`
     font-weight: 600;
     font-size: 40px;
@@ -40,10 +33,10 @@ const Paragraph = styled.p`
     font-size: 20px;
     line-height: 36px;
 
-    margin-top: 12px;
+    margin-top: 22px;
     margin-left: 40px;
 
-    width: 498px;
+    width: 507px;
     height: 269px;
 `
 
