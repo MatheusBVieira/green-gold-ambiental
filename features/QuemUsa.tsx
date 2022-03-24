@@ -10,10 +10,10 @@ export default function QuemUsa(props: any) {
             height={100}
             leftStyle={Left}
             left={
-                <>
+                <WrapperLeft>
                     <Title><strong>Quem usa</strong> <br />hidrossemeadura?</Title>
                     <QuemUsaImage />
-                </>
+                </WrapperLeft>
             }
             rightStyle={Right}
             right={
@@ -49,7 +49,16 @@ const Title = styled.h2`
 `
 
 const Left = styled.div`
-    margin: 103px auto 0 auto;
+    width: 100%;
+    display: flex;
+    margin: auto 0 auto 0;
+    padding-right: 46px;
+    flex-direction: column;
+`
+
+const WrapperLeft = styled.div`
+    width: 565px;
+    align-self: flex-end;
 `
 
 const Right = styled.div`

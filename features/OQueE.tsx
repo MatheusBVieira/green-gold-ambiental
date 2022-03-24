@@ -48,7 +48,11 @@ const Paragraph = styled.p`
 `
 
 const Left = styled.div`
-    margin: auto auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: auto 0 auto 0;
+    padding-right: 172px;
 `
 
 const Right = styled.div`
