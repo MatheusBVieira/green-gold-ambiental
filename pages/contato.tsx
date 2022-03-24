@@ -10,7 +10,7 @@ import {IsEmail, verifyEmpty} from '../utils/validate';
 import { useRouter } from 'next/router';
 
 export default function Contato(props: any) {
-    init("R_QGa4kXL-kPLt7hQ");
+    init(String(process.env.USER_ID));
 
     const router = useRouter();
 
@@ -56,7 +56,7 @@ export default function Contato(props: any) {
 
         if (error) return;
 
-        emailjs.sendForm('service_uwxl6td', 'template_19jnuuo', form.current, 'R_QGa4kXL-kPLt7hQ')
+        emailjs.sendForm(String(process.env.SERVICE_ID), String(process.env.TEMPLATE_ID), form.current, process.env.USER_ID)
             .then((result) => {
                 alert('Email enviado com sucesso! Você será redirecionado para Home.');
 
