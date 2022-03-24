@@ -88,10 +88,9 @@ const Title = styled.h1`
 
 const Content = styled.div`
     min-height: 100vh;
-
-    margin: 232px 0 0 205px;
+    width: 1100px;
+    margin: 232px auto 0 auto;
 
     display: flex;
     flex-direction: column;
-
 `
