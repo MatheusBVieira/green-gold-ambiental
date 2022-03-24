@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     align-content: flex-start;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 `
 
 const Text = styled.span`

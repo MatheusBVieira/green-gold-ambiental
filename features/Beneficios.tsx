@@ -31,14 +31,14 @@ export default function Beneficios(props: any) {
                     <CheckedText text="Custo-benefício mais vantajoso em relação a sistemas convencionais;" /> 
                 </>
             }>
-            <Subtitle><Attention>Beneficios</Attention> da <br />hidrossemeadura?</Subtitle>
+            <Subtitle><Attention>Beneficios</Attention> da hidrossemeadura?</Subtitle>
         </InfoContent>
     );
 }
 
 const Subtitle = styled.h2`
     padding-top: 82px;
-    padding-bottom: 40px;
+    padding-bottom: 76px;
 
     color: ${p => p.theme.primaryForeground};
     font-weight: 600;

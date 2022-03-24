@@ -64,7 +64,11 @@ const Verdeplan = styled.strong`
 `
 
 const Left = styled.div`
-    margin: auto auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 200px 0 auto 0;
+    padding-right: 92px;
 `
 
 const Right = styled.div`

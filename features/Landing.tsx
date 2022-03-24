@@ -5,12 +5,11 @@ export default function Landing(props: any) {
 
   return (
     <HomeWrapper>
-        <Title>
-            Bem-vindos a <strong>Green Gold Ambiental</strong>
-        </Title>
-
-        <Resumo>A <strong>GreenGoldAmbiental</strong> oferece serviços de revegetação de taludes, aterros e áreas planas para prevenção e proteção do solo contra erosões e recuperação ambiental.</Resumo>
-        <Link href={"/contato"}>Peça o orçamento</Link>
+      <Title>
+        <strong>Green Gold Ambiental</strong>, onde tecnologia e <br />inovação ambiental andam juntas 
+      </Title>
+      <Resumo>Oferecemos serviços de revegetação de taludes, aterros e áreas planas para prevenção e proteção do solo contra erosões e recuperação ambiental.</Resumo>
+      <Link href={"/contato"}>Peça o orçamento</Link>
     </HomeWrapper>
     );
 
@@ -44,13 +43,16 @@ const HomeWrapper = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 36px;
   font-weight: 700;
+  font-size: 36px;
+  line-height: 60px;
+  text-align: center;
 `
 
 const Resumo = styled.p`
-  font-weight: 600;
+  font-weight: 500;
   font-size: 24px;
-  width: 640px;
+  line-height: 40px;
+  max-width: 717px;
   text-align: center;
 `

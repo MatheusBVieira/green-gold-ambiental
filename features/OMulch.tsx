@@ -57,8 +57,9 @@ const Subtitle = styled.h2`
 const Paragraph = styled.p`
     font-weight: 500;
     font-size: 24px;
-    line-height: 30px;
-    max-width: 520px;
+    line-height: 36px;
+
+    max-width: 504px;
     margin-left: 30px;
     color: ${p => p.theme.primaryForeground};
 `
