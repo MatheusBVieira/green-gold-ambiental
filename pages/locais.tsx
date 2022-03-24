@@ -21,7 +21,7 @@ export default function Locais(props: any) {
                 left={
                     <WrapperLeft>
                         <Title>Locais de atuação</Title>
-                        <Paragraph>A Green Gold Ambiental atua em toda a região <br /> sul do Brasil, que inclui os estados de <strong>Santa <br />Catarina, Rio Grande do Sul</strong> e <strong>Paraná.</strong></Paragraph>
+                        <Paragraph>A Green Gold Ambiental atua em toda a <br /> região sul do Brasil, que inclui os <br /> estados de <strong>Santa Catarina, Rio Grande <br /> do Sul</strong> e <strong>Paraná.</strong></Paragraph>
                     </WrapperLeft>
                 }
                 rightStyle={Right}
@@ -56,19 +56,25 @@ const Left = styled.div`
 
 const WrapperLeft = styled.div`
     align-self: flex-end;
-    margin-right: 5%;
     z-index:1;
+    margin-right: 70px;
+
+    strong {
+        color: #EA1818;
+    }
+
 `
 
 const Title = styled.h1`
     font-weight: 600;
     font-size: 36px;
     line-height: 42px;
+    color: ${p => p.theme.attentionForeground};
     margin-bottom: 36px;
 `
 
 const Paragraph = styled.span`
-    max-width: 570px;
+    width: 470px;
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
@@ -76,6 +82,6 @@ const Paragraph = styled.span`
 
 const Right = styled.div`
     margin-top: -100px;
-    margin-left: -70px;
+    /* margin-left: -70px; */
 `
 
