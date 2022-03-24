@@ -95,8 +95,7 @@ const Wrapper = styled.main`
 `
 
 const Content = styled.div`
-  margin-top: 236px;
-  margin-left: 170px;
+  margin: 236px auto 0 auto;
   width: 1100px;
 `
 
