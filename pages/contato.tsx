@@ -9,6 +9,17 @@ import emailjs, { init } from '@emailjs/browser';
 import {IsEmail, verifyEmpty} from '../utils/validate';
 import { useRouter } from 'next/router';
 
+export async function sendEmailExternal(formCurrent: any, router: any) {
+    emailjs.sendForm(String(process.env.SERVICE_ID), String(process.env.TEMPLATE_ID), formCurrent, process.env.USER_ID)
+        .then((result) => {
+            alert('Email enviado com sucesso! Você será redirecionado para Home.');
+            router.push('/');
+        }, (error) => {
+            alert(error + 'Erro ao enviar email!');
+        }
+    );
+}
+
 export default function Contato(props: any) {
     init(String(process.env.USER_ID));
 
@@ -36,37 +47,27 @@ export default function Contato(props: any) {
     
     const sendEmail = (e: any) => {
         e.preventDefault();
-
+        
         var error = verifyEmpty(name, "name");
         error = verifyEmpty(email, "email");
         error = verifyEmpty(company, "company");
         error = verifyEmpty(phone, "phone");
         error = verifyEmpty(profession, "profession");
         error = verifyEmpty(area, "area");
-
+        
         if (interest === "") {
             setSelectInterestIsValid(false);
             error = true;
         }
-
+        
         if (state === "") {
             setSelectStateIsValid(false);
             error = true;
         }
-
+        
         if (error) return;
-
-        emailjs.sendForm(String(process.env.SERVICE_ID), String(process.env.TEMPLATE_ID), form.current, process.env.USER_ID)
-            .then((result) => {
-                alert('Email enviado com sucesso! Você será redirecionado para Home.');
-
-                router.push('/');
-
-                const form: any = document.getElementById('form')
-            }, (error) => {
-                alert('Erro ao enviar email!');
-            }
-        );
+        
+        sendEmailExternal(form.current, router);
     };
     
     let optionsState = [
@@ -157,17 +158,17 @@ export default function Contato(props: any) {
                         text={"Quer falar conosco? Mande uma mensagem!"}
                         placeholder='Digite sua mensagem...'
                     />
-                    <InputHidden
+                    <input
                         value={message}
                         name={"message"}
                         type={"hidden"}
                     />
-                    <InputHidden
+                    <input
                         value={state}
                         name={"state"}
                         type={"hidden"}
                     />
-                    <InputHidden
+                    <input
                         value={interest}
                         name={"interest"}
                         type={"hidden"}
@@ -215,10 +216,6 @@ const FormWrapper = styled.form`
     gap: 22px;
     border-radius: 10px;
 `
-const InputHidden = styled.input`
-
-`
-
 
 const Button = styled.button`
     padding: 28px 68px;
