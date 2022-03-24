@@ -31,7 +31,7 @@ export default function Beneficios(props: any) {
                     <CheckedText text="Custo-benefício mais vantajoso em relação a sistemas convencionais;" /> 
                 </>
             }>
-            <Subtitle><Attention>Beneficios</Attention> da <br />hidrossemeadura?</Subtitle>
+            <Subtitle><Attention>Beneficios</Attention> da hidrossemeadura?</Subtitle>
         </InfoContent>
     );
 }

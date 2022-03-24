@@ -7,7 +7,7 @@ export default function PorQue(props: any) {
     return (
         <Wrapper>
             <Content>
-                <Subtitle>Por que Green Gold Ambiental<br /> é a melhor do mercado</Subtitle>
+                <Subtitle>Por que Green Gold Ambiental é a <br /> melhor do mercado</Subtitle>
                 <TextWrapper>
                     <SmallRightArrowText text="Trabalhamos com sementes selecionadas e insumos de alta tecnologia"/>
                     <SmallRightArrowText text="Rigorosa entrega e atendimento de Cronograma"/>

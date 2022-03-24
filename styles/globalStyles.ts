@@ -15,7 +15,15 @@ export default createGlobalStyle`
   body {
     background-color: ${(p) => p.theme.pageBackground};
     color: ${(p) => p.theme.pageForeground};
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'montserrat', normal;
+
+    h1 {
+      font-family: 'Barlow', normal;
+    }
+
+    h2 {
+      font-family: 'Barlow', normal;
+    }
   }
 
   strong {

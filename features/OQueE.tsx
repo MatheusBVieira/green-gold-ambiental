@@ -32,7 +32,7 @@ const Wrapper = styled.div`
 const Title = styled.h2`
     font-weight: 600;
     font-size: 40px;
-    line-height: 47px;
+    line-height: 48px;
 `
 
 const Paragraph = styled.p`
