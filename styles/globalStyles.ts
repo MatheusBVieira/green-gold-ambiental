@@ -17,4 +17,8 @@ export default createGlobalStyle`
     color: ${(p) => p.theme.pageForeground};
     font-family: 'Work Sans', sans-serif;
   }
+
+  strong {
+    color: ${props => props.theme.attentionForeground};
+  }
 `;
