@@ -23,7 +23,7 @@ const Wrapper = styled.div`
     width: 570px;
     height: 158px;
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 500px) {
         width: 256px;
         height: 76px;
     }
@@ -37,7 +37,7 @@ const Text = styled.span`
     line-height: 30px;
     color: ${p => p.theme.primaryForeground};
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 500px) {
         font-weight: 600;
         font-size: 10px;
         line-height: 13px;
@@ -57,7 +57,7 @@ const TextA = styled.textarea`
     line-height: 28px;
     border-radius: 10px;
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 500px) {
         width: 256px;
         height: 60px;
 

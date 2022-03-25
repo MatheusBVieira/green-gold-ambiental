@@ -210,7 +210,7 @@ const Content = styled.div`
     flex-direction: column;
     align-items: center;
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 500px) {
         margin-top: 100px;
     }
 `
@@ -235,7 +235,7 @@ const FormWrapper = styled.form`
         width: calc(100% - 32px);
     }
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 500px) {
         gap: 14px;
         padding-top: 38px;
     }
@@ -257,7 +257,7 @@ const Button = styled.button`
     
     border-radius: 10px;
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 500px) {
         padding: 12px 32px;
         margin-top: 26px;
         margin-bottom: 32px;
