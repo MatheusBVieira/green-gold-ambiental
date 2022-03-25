@@ -26,9 +26,9 @@ export default function Beneficios(props: any) {
                     <CheckedText text="Germinação das sementes com mais rapidez" />
                     <CheckedText text="Vegetação com excelentes níveis de desenvolvimento em até 45 dias" />
                     <CheckedText text="Utilização de materiais 100% biodegradáveis" />
+                    <CheckedText text="Custo-benefício mais vantajoso em relação a sistemas convencionais" /> 
                     <CheckedText text="Eliminação rápida de riscos de erosão" />
                     <CheckedText text="Aderência total à superfície sem quaisquer folgas" />
-                    <CheckedText text="Custo-benefício mais vantajoso em relação a sistemas convencionais;" /> 
                 </>
             }>
             <Subtitle><Attention>Beneficios</Attention> da hidrossemeadura?</Subtitle>
@@ -53,16 +53,24 @@ const Attention = styled.strong`
 
 const WrapperLeft = styled.div`
     width: 565px;
+    height: 100%;
     align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `
 
 const Left = styled.div`
     display: flex;
     flex-direction: column;
-
     margin: auto 0 auto 0;
+    height: 386px;
 `
 
 const Right = styled.div`
     margin: auto 0 auto 5%;
+    height: 386px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `
