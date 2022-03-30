@@ -52,6 +52,15 @@ const Subtitle = styled.h2`
     font-size: 40px;
     line-height: 47px;
     text-align: left;
+
+    @media only screen and (max-width: 500px) {
+        margin-top:70px;
+        
+        text-align: center;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+    }
 `
 
 const Paragraph = styled.p`
@@ -62,12 +71,27 @@ const Paragraph = styled.p`
     max-width: 504px;
     margin-left: 30px;
     color: ${p => p.theme.primaryForeground};
+
+    @media only screen and (max-width: 500px) {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+
+        max-width: 326px;
+        margin: 0 auto;
+    }
 `
 
 const WrapperLeft = styled.div`
     width: 565px;
     align-self: flex-end;
-    margin-right: 5%
+    margin-right: 5%;
+
+    @media only screen and (max-width: 500px) {
+        margin: 0;
+        width: 100%;
+    }
 `
 
 const Left = styled.div`
@@ -80,4 +104,9 @@ const Left = styled.div`
 const Right = styled.div`
     margin: auto 0 auto 5%;
     height: 436px;
+
+    @media only screen and (max-width: 500px) {
+        margin: 0 auto 0 auto;
+        
+    }
 `

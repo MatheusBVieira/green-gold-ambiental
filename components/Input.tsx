@@ -24,14 +24,14 @@ const Wrapper = styled.div`
     height: 98px;
 
     @media only screen and (max-width: 500px) {
-        width: 256px;
+        width: 300px;
         height: 46px;
     }
 `
 
 const Text = styled.span`
     max-width: 500px;
-    
+     
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
@@ -59,7 +59,7 @@ const TextInput = styled.input`
     border-radius: 10px;
 
     @media only screen and (max-width: 500px) {
-        width: 256px;
+        width: 100%;
         padding: 9px 0 9px 8px;
 
         font-weight: 500;

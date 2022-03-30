@@ -29,7 +29,7 @@ const options: Chart.ChartOptions = {
         ticks: {
           beginAtZero: true,
           fontColor: '#fff',
-          fontSize: 18,
+          fontSize: 12,
         }
       }
     ],
@@ -45,7 +45,7 @@ const options: Chart.ChartOptions = {
         ticks: {
           beginAtZero: true,
           fontColor: '#fff',
-          fontSize: 18,
+          fontSize: 14,
           padding: 20,
           min: 1000,
           max: 2500,
@@ -66,7 +66,7 @@ export interface ChartProps {
 
 export default function Chart ({ data, title }: ChartProps) {
   return <ChartWrapper >
-    <div style={{ marginBottom: 54 }}>
+    <div style={{ marginBottom: 18, marginTop: 52 }}>
       <Heading>
         {title}
       </Heading>
@@ -86,6 +86,11 @@ const ChartWrapper = styled.div`
 
   width: 418px;
   height: 352px;
+  
+  @media only screen and (max-width: 500px) {
+    width: 311px;
+    height: 301px;
+  }
 `
 
 const Heading = styled.h3`
@@ -93,4 +98,9 @@ const Heading = styled.h3`
   font-size: 24px;
 
   color:${p => p.theme.attentionForeground};
+  
+  @media only screen and (max-width: 500px) {
+    font-size: 14px;
+    line-height: 17px;
+  }
 `

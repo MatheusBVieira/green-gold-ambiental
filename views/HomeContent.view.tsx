@@ -1,22 +1,22 @@
-import Beneficios from '../features/Beneficios'
+import Benefits from '../features/Benefits'
 import Landing from '../features/Landing'
 import OMulch from '../features/OMulch'
-import OQueE from '../features/OQueE'
-import PorQue from '../features/PorQue'
-import QuemUsa from '../features/QuemUsa'
-import QueTipo from '../features/QueTipo'
+import WhatIs from '../features/WhatIs'
+import Why from '../features/Why'
+import WhoUse from '../features/WhoUse'
+import WhatType from '../features/WhatType'
 
 export default function HomeContent(props: any) {
 
     return (
         <>
             <Landing />
-            <OQueE />
-            <Beneficios />
-            <QueTipo />
+            <WhatIs />
+            <Benefits />
+            <WhatType />
             <OMulch />
-            <QuemUsa />
-            <PorQue />
+            <WhoUse />
+            <Why />
         </>
     )
 }

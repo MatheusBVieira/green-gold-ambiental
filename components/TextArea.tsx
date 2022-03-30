@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     height: 158px;
 
     @media only screen and (max-width: 500px) {
-        width: 256px;
+        width: 300px;
         height: 76px;
     }
 `
@@ -48,7 +48,7 @@ const Text = styled.span`
 
 const TextA = styled.textarea`
     padding: 18px;
-    width: 570px;
+    width: 100%;
     height: 124px;
     resize: none;
     border: 0 none;
@@ -58,7 +58,6 @@ const TextA = styled.textarea`
     border-radius: 10px;
 
     @media only screen and (max-width: 500px) {
-        width: 256px;
         height: 60px;
 
         font-weight: 500;

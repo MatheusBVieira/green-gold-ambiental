@@ -56,7 +56,7 @@ export default function TextSelect(props: InputProps) {
             ...styles,
             color: '#a9a9a9',
             fontSize: '10px',
-            padding: '9px 0 9px 8px',
+            padding: '9px 0 9px 0',
             fontWeight: 500,
         }),
         singleValue: (styles: any, { data }: any) => {
@@ -64,7 +64,7 @@ export default function TextSelect(props: InputProps) {
                 ...styles,
                 color: 'black',
                 fontSize: '10px',
-                padding: '9px 0 9px 8px',
+                padding: '9px 0 9px 0',
                 fontWeight: 500,
             };
         },
@@ -102,11 +102,11 @@ const Wrapper = styled.div`
     }
 
     @media only screen and (max-width: 500px) {
-        width: 256px;
+        width: 300px;
         height: 46px;
 
         div:first-child {
-            width: 256px;
+            width: 300px;
         }
     }
 `

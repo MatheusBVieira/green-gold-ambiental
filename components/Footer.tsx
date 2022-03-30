@@ -48,6 +48,10 @@ const Wrapper = styled.footer`
 
     @media only screen and (max-width: 500px) {
         height: 380px;
+
+        span {
+            font-size: 10px;
+        }
     }
 `
 const Container = styled.div`
