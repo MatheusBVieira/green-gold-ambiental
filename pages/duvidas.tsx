@@ -84,6 +84,12 @@ const Title = styled.h1`
     font-size: 36px;
     line-height: 42px;
     color: ${p => p.theme.attentionForeground};
+
+    @media only screen and (max-width: 500px) {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0 auto 40px auto;
+    }
 `
 
 const Content = styled.div`
@@ -93,4 +99,9 @@ const Content = styled.div`
 
     display: flex;
     flex-direction: column;
+    
+    @media only screen and (max-width: 500px) {
+        margin-top: 100px;
+        width: 100%;
+    }
 `
