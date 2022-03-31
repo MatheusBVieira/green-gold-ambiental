@@ -1,5 +1,6 @@
 import Link from "next/link"
 import styled from "styled-components"
+import SocialLinks from "../components/SocialLinks";
 
 export default function Landing(props: any) {
 
@@ -10,6 +11,7 @@ export default function Landing(props: any) {
       </Title>
       <Resumo>Oferecemos serviços de revegetação de taludes, aterros e áreas planas para prevenção e proteção do solo contra erosões e recuperação ambiental.</Resumo>
       <Link href={"/contato"}>Peça o orçamento</Link>
+      <SocialLinks local="landing" />
     </HomeWrapper>
     );
 
@@ -24,7 +26,7 @@ const HomeWrapper = styled.div`
   flex-direction: column;
   gap: 26px;
 
-  background-image: url('/images/banner2.svg');
+  background-image: url('/images/backgroundLanding.svg');
   background-size: cover;
   
   @media only screen and (max-width: 500px) {
@@ -32,7 +34,7 @@ const HomeWrapper = styled.div`
     background-repeat: no-repeat;
   }
 
-  a {
+  a:nth-child(3) {
     padding: 16px 32px;
 
     font-weight: 600;
