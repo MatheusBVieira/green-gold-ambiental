@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Checked from "../public/icons/Checked.icon";
 
 export interface InfoContentProps extends React.HTMLAttributes<HTMLDivElement> {
     text: string;
