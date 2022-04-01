@@ -18,7 +18,7 @@ import photos13 from '../public/images/photosPage/photos13.svg';
 import photos14 from '../public/images/photosPage/photos14.svg';
 
 
-export default function Home(props: any) {
+export default function Fotos(props: any) {
 
   return (
     <Wrapper>
@@ -29,7 +29,7 @@ export default function Home(props: any) {
       </Head>
 
       <Content>
-        <Title>Fotos do nosso trabalho</Title>
+        <Title>PORTFÓLIO</Title>
         <ImagesContent>
           <Images>
             <div style={{ width: 482, height: 643}}>
