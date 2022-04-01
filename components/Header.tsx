@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import Link from "next/link";
 import { HTMLAttributes } from "react";
 import Logo from "../public/images/Logo.image";
+import Burger from "./Burger";
 
 export interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
     scroll: boolean
@@ -15,7 +16,7 @@ export default function Header({scroll, ...props} : HeaderProps) {
         <Wrapper id="header" {...props} scroll={scroll} >
             <Container>
                 <Link href="/"><Logo /></Link>
-                <NavBar />
+                <Burger />
             </Container>
         </Wrapper>
     );
@@ -45,6 +46,24 @@ const Wrapper = styled.div<{ scroll: boolean }>`
             padding: 8px 16px;
             border-radius: 8px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            @media (max-width: 768px) {
+                border: none;
+                box-shadow: none;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        background-color: transparent;
+        box-shadow: none;
+
+        a {
+            color: ${p => p.theme.headerForeground};
+        }
+
+        svg {
+            margin-left: 16px;
         }
     }
 `
