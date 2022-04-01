@@ -4,39 +4,40 @@ import { FOOTER_HEIGHT } from "../_constants";
 import Call from "../public/icons/Call.icon";
 import Email from "../public/icons/Email.icon";
 import Location from "../public/icons/Location.icon";
+import WhatsAppSmall from "../public/icons/WhatsAppSmall.icon";
+import Instagram from "../public/icons/Instagram.icon";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer(Props: any) {
     return (
         <Wrapper>
-            <Container>
+            <Content>
                 <InfoWrapper>
                     <IconContentWrapper>
                         <Call />
                         <PhoneWrapper>
                             <span>Telefones:</span>
-                            <span>+55 (11) 99999-9999</span>
-                            <span>+55 (11) 99999-9999</span>
+                            <span>+55 (48) 48 9 9913-0310</span>
                         </PhoneWrapper>
                     </IconContentWrapper>
                     <IconContentWrapper>
                         <Location />
                         <LocalizationWrapper>
                             <span>Localização:</span>
-                            <span>Rod. Jorn. Manoel de Menezes, 2057 - Praia Mole</span>
-                            <span>Florianópolis - SC, 88061-701</span>
+                            <span>Três Riachos, Biguaçu, Santa Catarina, Brasil</span>
                         </LocalizationWrapper>
                     </IconContentWrapper>
                     <IconContentWrapper>
                         <Email />
                         <EmailWrapper>
                             <span>E-mail:</span>
-                            <span>nathaliaafilomeno@gmail.com</span>
-                            <span>nathaliaafilomeno@gmail.com</span>
+                            <span>contatogreengoldambiental@gmail.com</span>
                         </EmailWrapper>
                     </IconContentWrapper>
-                    <CpnjInfo>Green Gold Ambiental. CNPJ:28748278</CpnjInfo>
+                    <CpnjInfo>Green Gold Ambiental.<br />CNPJ:40.403.9000/0001-02</CpnjInfo>
                 </InfoWrapper>
-            </Container>
+            </Content>
+            <SocialLinks local="footer" />
         </Wrapper>
     );
 }
@@ -47,24 +48,45 @@ const Wrapper = styled.footer`
 
     width: 100%;
     height: ${FOOTER_HEIGHT}px;
+
+    @media only screen and (max-width: 500px) {
+        height: 260px;
+
+        span {
+            font-size: 12px;
+        }
+    }
 `
-const Container = styled.div`
+const Content = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
     max-width: 1200px;
     margin: auto;
     height: 100%;
+
+    @media only screen and (max-width: 500px) {
+        padding-left: 8px;
+    }
 `
 
 const InfoWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @media only screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
 `;
 
 const IconContentWrapper = styled.div`
     display: flex;
     gap: 10px;
+
+    span:first-child {
+        font-weight: 600;
+    }
 `;
 
 const PhoneWrapper = styled.div`
@@ -72,12 +94,21 @@ const PhoneWrapper = styled.div`
     flex-direction: column;
     gap: 12px;
     margin-bottom: 24px;
+
+    @media only screen and (max-width: 500px) {
+        gap: 6px;
+        margin-bottom: 0;
+    }
 `;
 
 const EmailWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    @media only screen and (max-width: 500px) {
+        gap: 6px;
+    }
 `;
 
 const LocalizationWrapper = styled.div`
@@ -86,6 +117,10 @@ const LocalizationWrapper = styled.div`
     
     span:first-child {
         margin-bottom: 12px;
+
+        @media only screen and (max-width: 500px) {
+            margin-bottom: 6px;
+        }
     }
 `
 

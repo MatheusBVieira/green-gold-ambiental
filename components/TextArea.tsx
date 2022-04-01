@@ -22,6 +22,11 @@ const Wrapper = styled.div`
 
     width: 570px;
     height: 158px;
+
+    @media only screen and (max-width: 500px) {
+        width: 300px;
+        height: 76px;
+    }
 `
 
 const Text = styled.span`
@@ -31,11 +36,19 @@ const Text = styled.span`
     font-size: 20px;
     line-height: 30px;
     color: ${p => p.theme.primaryForeground};
+
+    @media only screen and (max-width: 500px) {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 13px;
+
+        margin-bottom: 3px;
+    }
 `
 
 const TextA = styled.textarea`
     padding: 18px;
-    width: 570px;
+    width: 100%;
     height: 124px;
     resize: none;
     border: 0 none;
@@ -43,4 +56,14 @@ const TextA = styled.textarea`
     font-size: 20px;
     line-height: 28px;
     border-radius: 10px;
+
+    @media only screen and (max-width: 500px) {
+        height: 60px;
+
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 12px;
+
+        border-radius: 5px;
+    }
 `
