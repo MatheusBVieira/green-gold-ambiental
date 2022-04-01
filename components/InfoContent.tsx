@@ -36,7 +36,7 @@ export default function InfoContent(props: InfoContentProps) {
                     as={motion.div}
                     ref={ref}
                     initial='hidden'
-                    transition={{ duration: 0.3}}
+                    transition={{ duration: 0.5 }}
                     variants={{
                         show: { opacity: 1, x: '0' },
                         hidden: { opacity: 0, x: '-100%' }
@@ -49,7 +49,7 @@ export default function InfoContent(props: InfoContentProps) {
                     as={motion.div}
                     ref={ref}
                     initial='hidden'
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.5 }}
                     variants={{
                         show: { opacity: 1, x: '0' },
                         hidden: { opacity: 0, x: '100%' }
