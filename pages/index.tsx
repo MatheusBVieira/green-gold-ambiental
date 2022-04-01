@@ -1,11 +1,7 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import styled from 'styled-components'
-import QuemUsa from '../public/images/QuemUsa.image'
-import Beneficios from '../views/Beneficios'
-import Landing from '../views/Landing.view'
-import OQueE from '../views/OQueE.view'
-import QueTipo from '../views/QueTipo.view'
+import HomeContent from '../views/HomeContent.view'
+
 
 
 export default function Home(props: any) {
@@ -18,12 +14,8 @@ export default function Home(props: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Landing />
-      <OQueE />
-      <Beneficios />
-      <QueTipo />
-      <QuemUsa />
-
+      <HomeContent />
+      
     </Wrapper>
   )
 }
@@ -31,5 +23,4 @@ export default function Home(props: any) {
 const Wrapper = styled.main`
   
 `
-
 
