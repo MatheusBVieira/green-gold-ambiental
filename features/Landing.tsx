@@ -1,12 +1,36 @@
 import Link from "next/link"
 import styled from "styled-components"
+import { motion, useAnimation } from 'framer-motion'
 import SocialLinks from "../components/SocialLinks";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 export default function Landing(props: any) {
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('show');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
 
   return (
     <HomeWrapper>
-      <Title>
+      <Title
+        as={motion.h1}
+        ref={ref}
+        transition={{ duration: 0.5 }}
+        variants={{
+          show: { opacity: 1, y: '0' },
+          hidden: { opacity: 0, y: '-100%' }
+        }}
+        initial='hidden'
+        animate={controls}
+      >
         <strong>Green Gold Ambiental</strong>, onde tecnologia e <br />inovação ambiental andam juntas 
       </Title>
       <Resumo></Resumo>
