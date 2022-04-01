@@ -37,13 +37,22 @@ const Wrapper = styled.div<{ scroll: boolean }>`
     a {
         color: ${p => p.scroll ? p.theme.headerForeground : p.theme.attentionForeground};
         text-decoration: none;
+
+        &:last-child {
+            margin-right: 0;
+            
+            border: 2px solid ${p => p.scroll ? p.theme.primaryForeground : p.theme.attentionForeground};;
+            padding: 8px 16px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
     }
 `
 const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     height: 100%;
 

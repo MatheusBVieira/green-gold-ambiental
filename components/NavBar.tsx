@@ -10,7 +10,7 @@ export default function NavBar() {
                     <Link href="/duvidas">Dúvidas</Link>
                     <Link href="/locais">Locais</Link>
                     <Link href="/fotos">Portfólio</Link>
-                    <Link href="/contato">Orçamento</Link>
+                    <Link href="/contato">Faça seu orçamento</Link>
                 </li>
             </Wrapper>
         </nav>
@@ -26,8 +26,5 @@ const Wrapper = styled.ul`
         font-size: 18px;
         font-weight: 600;
 
-        &:last-child {
-            margin-right: 0;
-        }
     }
 `
