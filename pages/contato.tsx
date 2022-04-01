@@ -6,7 +6,7 @@ import Input from '../components/Input'
 import TextSelect from '../components/TextSelect'
 import TextArea from '../components/TextArea'
 import emailjs, { init } from '@emailjs/browser';
-import {IsEmail, verifyEmpty} from '../utils/validate';
+import {verifyEmpty} from '../utils/validate';
 import { useRouter } from 'next/router';
 
 export async function sendEmailExternal(formCurrent: any, router: any) {
