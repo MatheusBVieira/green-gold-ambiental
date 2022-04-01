@@ -4,6 +4,7 @@ import { HEADER_HEIGHT } from "../_constants";
 import NavBar from "./NavBar";
 import Link from "next/link";
 import { HTMLAttributes } from "react";
+import Logo from "../public/images/Logo.image";
 
 export interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
     scroll: boolean
@@ -13,7 +14,7 @@ export default function Header({scroll, ...props} : HeaderProps) {
     return (
         <Wrapper id="header" {...props} scroll={scroll} >
             <Container>
-                <Link href="/">Logo</Link>
+                <Link href="/"><Logo /></Link>
                 <NavBar />
             </Container>
         </Wrapper>
@@ -45,4 +46,8 @@ const Container = styled.div`
     max-width: 1200px;
     margin: auto;
     height: 100%;
+
+    svg {
+        cursor: pointer;
+    }
 `

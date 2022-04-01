@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Select from 'react-select'
 import { transparentize } from "polished";
+import useWindowDimensions from "../utils/WindowDimensions";
 
 interface InputProps {
     onChange: any;
@@ -11,6 +12,9 @@ interface InputProps {
 }
 
 export default function TextSelect(props: InputProps) {
+    const { width } = useWindowDimensions();
+
+    console.log(width);
     
     const colourStyles = {
         menu: (provided: any, state: any) => ({
@@ -79,7 +83,7 @@ export default function TextSelect(props: InputProps) {
             <Text>{props.text}</Text>
             <Select
                 onChange={props.onChange}
-                styles={colourStylesMob}
+                styles={width > 500 ? colourStyles : colourStylesMob}
                 options={props.options}
                 name={props.name}
                 isSearchable={false}
