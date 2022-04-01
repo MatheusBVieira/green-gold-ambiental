@@ -4,17 +4,22 @@ import { motion, useAnimation } from 'framer-motion'
 import SocialLinks from "../components/SocialLinks";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import useWindowDimensions from "../utils/WindowDimensions";
 
 export default function Landing(props: any) {
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
+  const { width } = useWindowDimensions();
+
   useEffect(() => {
-    if (inView) {
-      controls.start('show');
-    }
-    if (!inView) {
-      controls.start('hidden');
+    if (width > 500) {
+      if (inView) {
+        controls.start('show');
+      }
+      if (!inView) {
+        controls.start('hidden')
+      }
     }
   }, [controls, inView]);
 
@@ -28,8 +33,8 @@ export default function Landing(props: any) {
           show: { opacity: 1, y: '0' },
           hidden: { opacity: 0, y: '-100%' }
         }}
-        initial='hidden'
-        animate={controls}
+        initial={width > 968 ? 'hidden' : 'show'}
+        animate={width > 968 ? controls : undefined }
       >
         <strong>Green Gold Ambiental</strong>, onde tecnologia e <br />inovação ambiental andam juntas 
       </Title>

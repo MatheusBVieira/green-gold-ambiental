@@ -14,8 +14,6 @@ interface InputProps {
 export default function TextSelect(props: InputProps) {
     const { width } = useWindowDimensions();
 
-    console.log(width);
-    
     const colourStyles = {
         menu: (provided: any, state: any) => ({
             ...provided,
