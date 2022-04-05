@@ -43,4 +43,9 @@ export default createGlobalStyle`
       height: 271px;
     }
   }
+
+  .logo {
+    width: 144px;
+    height: 70px;
+  }
 `;
