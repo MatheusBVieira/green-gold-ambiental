@@ -1,6 +1,7 @@
 import { withCoalescedInvoke } from 'next/dist/lib/coalesced-function';
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 import styled from 'styled-components'
 import photos01 from '../public/images/photosPage/photos01.svg';
 import photos02 from '../public/images/photosPage/photos02.svg';
@@ -21,9 +22,6 @@ import useWindowDimensions from '../utils/WindowDimensions';
 
 
 export default function Fotos(props: any) {
-  const { width } = useWindowDimensions();
-
-  console.log(width);
 
   return (
     <Wrapper>
@@ -37,24 +35,24 @@ export default function Fotos(props: any) {
         <Title>PORTFÓLIO</Title>
         <ImagesContent>
           <Images>
-            <div style={width > 700 ? { width: 482, height: 643 } : { width: 156, height: 208 }}>
+            <Image01 >
               <Image src={photos01} alt="Imagem hidrossemeadura"/>
-            </div>
-            <div style={width > 500 ? { width: 482, height: 362 } : { width: 156, height: 117 } }>
+            </Image01>
+            <Image03>
               <Image src={photos03} alt="Imagem hidrossemeadura"/>
-            </div>
-            <div style={width > 500 ? { width: 482, height: 969 } : { width: 156, height: 229 }}>
-              <Image src={width > 500 ? photos05 : photos05Mob} alt="Imagem hidrossemeadura"/>
-            </div>
+            </Image03>
+            <Image05>
+              <Image src={photos05} alt="Imagem hidrossemeadura"/>
+            </Image05>
           </Images>
           <Images>
-            <div style={width > 500 ? { width: 600, height: 444 } : { width: 156, height: 114 }}>
+            <Image02>
               <Image src={photos02} alt="Imagem hidrossemeadura" />
-            </div>
-            <div style={width > 500 ? { width: 600, height: 731 } : { width: 156, height: 192 }}>
+            </Image02>
+            <Image04>
               <Image src={photos04} alt="Imagem hidrossemeadura" />
-            </div>
-            <div style={width > 500 ? { width: 600, height: 807 } : { width: 156, height: 248 }}>
+            </Image04>
+            <div>
               <Image src={photos06} alt="Imagem hidrossemeadura" />
             </div>
           </Images>
@@ -64,24 +62,24 @@ export default function Fotos(props: any) {
         </div>
         <ImagesContent>
           <Images>
-            <div style={width > 500 ? { width: 482, height: 596 } : { width: 156, height: 206 } }>
+            <div>
               <Image src={photos08} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={width > 500 ? { width: 482, height: 596 } : { width: 156, height: 206 } }>
+            <div>
               <Image src={photos10} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={width > 500 ? { width: 482, height: 601 } : {width: 156, height: 206 }}>
+            <div>
               <Image src={photos12} alt="Imagem hidrossemeadura" />
             </div>
           </Images>
           <Images>
-            <div style={width > 500 ? { width: 600, height: 822 } : { width: 156, height: 290 }}>
+            <div>
               <Image src={photos09} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={width > 500 ? { width: 600, height: 470 } : { width: 156, height: 122 }}>
+            <div>
               <Image src={photos11} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={width > 500 ? { width: 600, height: 487 } : { width: 156, height: 206 }}>
+            <div>
               <Image src={photos13} alt="Imagem hidrossemeadura" />
             </div>
           </Images>
@@ -105,6 +103,7 @@ const Content = styled.div`
 
   @media only screen and (max-width: 500px) {
     width: 329px;
+    margin-top: 100px;
   }
 `
 
@@ -119,6 +118,7 @@ const Title = styled.h1`
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+    margin-bottom: 32px;
   }
 `
 
@@ -140,4 +140,64 @@ const Images = styled.div`
   @media only screen and (max-width: 500px) {
     gap: 12px
   }
+`
+
+const Image01 = styled.div`
+  width: 482px;
+  height: 643px;
+
+  @media only screen and (max-width: 500px) {
+    width: 156px; 
+    height: 208px;
+  } 
+`
+const Image02 = styled.div`
+  width: 600px;
+  height: 444px;
+
+  @media only screen and (max-width: 500px) {
+    width: 156px; 
+    height: 114px;
+  } 
+`
+const Image03 = styled.div`
+  width: 482px;
+  height: 362px;
+
+  @media only screen and (max-width: 500px) {
+    width: 156px; 
+    height: 117px;
+  } 
+`
+const Image04= styled.div`
+  width: 600px;
+  height: 731px;
+
+  @media only screen and (max-width: 500px) {
+    width: 156px; 
+    height: 192px;
+  } 
+`
+const Image05 = styled.div`
+  width: 482px;
+  height: 969px;
+
+  @media only screen and (max-width: 500px) {
+    width: 156px; 
+    height: 229px!important;
+    overflow: hidden;
+  } 
+`
+const Image06 = styled.div`
+  width: 600px;
+  height: 807px;
+
+  @media only screen and (max-width: 500px) {
+    width: 156px; 
+    height: 248px;
+
+    img {
+      object-fit: cover;
+    }
+  } 
 `
