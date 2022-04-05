@@ -4,11 +4,14 @@ import { FOOTER_HEIGHT } from "../_constants";
 import Call from "../public/icons/Call.icon";
 import Email from "../public/icons/Email.icon";
 import Location from "../public/icons/Location.icon";
-import WhatsAppSmall from "../public/icons/WhatsAppSmall.icon";
-import Instagram from "../public/icons/Instagram.icon";
 import SocialLinks from "./SocialLinks";
+import useWindowDimensions from "../utils/WindowDimensions";
 
 export default function Footer(Props: any) {
+    const { width } = useWindowDimensions();
+
+    console.log(width)
+    
     return (
         <Wrapper>
             <Content>
@@ -36,8 +39,9 @@ export default function Footer(Props: any) {
                     </IconContentWrapper>
                     <CpnjInfo>Green Gold Ambiental.<br />CNPJ:40.403.9000/0001-02</CpnjInfo>
                 </InfoWrapper>
+                {width < 700 ? '' : <SocialLinks local="landing" isDesk={true} />}
             </Content>
-            <SocialLinks local="footer" />
+            {width < 700 ? <SocialLinks local="footer" /> : '' }
         </Wrapper>
     );
 }
