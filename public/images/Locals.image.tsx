@@ -1,13 +1,14 @@
 import { SVGProps } from "react";
+import styled from "styled-components";
 
 export default function Locals(props: SVGProps<SVGSVGElement>) {
     return (
       <svg
-        width={628}
-        height={834}
+        className="imagemLocal"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 628 834"
         {...props}
       >
         <path fill="url(#a)" d="M0 0h628v834H0z" />
