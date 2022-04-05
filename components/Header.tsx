@@ -85,7 +85,7 @@ const LogoContent = styled.div<{ scroll: boolean }>`
     width: 144px;
     height: 70px;
 
-    background-image: ${p => p.scroll ? 'url("/images/logoWhite.svg")' : 'url("/images/logoBlack.svg")' };
+    background-image: ${p => p.scroll ? 'url("/images/LogoWhite.svg")' : 'url("/images/LogoBlack.svg")' };
     background-repeat: no-repeat;
 
     @media only screen and (max-width: 500px) {
