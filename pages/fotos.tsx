@@ -7,6 +7,7 @@ import photos02 from '../public/images/photosPage/photos02.svg';
 import photos03 from '../public/images/photosPage/photos03.svg';
 import photos04 from '../public/images/photosPage/photos04.svg';
 import photos05 from '../public/images/photosPage/photos05.svg';
+import photos05Mob from '../public/images/photosPage/photos05Mob.svg';
 import photos06 from '../public/images/photosPage/photos06.svg';
 import photos07 from '../public/images/photosPage/photos07.svg';
 import photos08 from '../public/images/photosPage/photos08.svg';
@@ -16,9 +17,13 @@ import photos11 from '../public/images/photosPage/photos11.svg';
 import photos12 from '../public/images/photosPage/photos12.svg';
 import photos13 from '../public/images/photosPage/photos13.svg';
 import photos14 from '../public/images/photosPage/photos14.svg';
+import useWindowDimensions from '../utils/WindowDimensions';
 
 
 export default function Fotos(props: any) {
+  const { width } = useWindowDimensions();
+
+  console.log(width);
 
   return (
     <Wrapper>
@@ -32,24 +37,24 @@ export default function Fotos(props: any) {
         <Title>PORTFÓLIO</Title>
         <ImagesContent>
           <Images>
-            <div style={{ width: 482, height: 643}}>
+            <div style={width > 700 ? { width: 482, height: 643 } : { width: 156, height: 208 }}>
               <Image src={photos01} alt="Imagem hidrossemeadura"/>
             </div>
-            <div style={{ width: 482, height: 362 }}>
+            <div style={width > 500 ? { width: 482, height: 362 } : { width: 156, height: 117 } }>
               <Image src={photos03} alt="Imagem hidrossemeadura"/>
             </div>
-            <div style={{ width: 482, height: 969 }}>
-              <Image src={photos05} alt="Imagem hidrossemeadura"/>
+            <div style={width > 500 ? { width: 482, height: 969 } : { width: 156, height: 229 }}>
+              <Image src={width > 500 ? photos05 : photos05Mob} alt="Imagem hidrossemeadura"/>
             </div>
           </Images>
           <Images>
-            <div style={{ width: 600, height: 444 }}>
+            <div style={width > 500 ? { width: 600, height: 444 } : { width: 156, height: 114 }}>
               <Image src={photos02} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={{ width: 600, height: 731, }}>
+            <div style={width > 500 ? { width: 600, height: 731 } : { width: 156, height: 192 }}>
               <Image src={photos04} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={{ width: 600, height: 807, }}>
+            <div style={width > 500 ? { width: 600, height: 807 } : { width: 156, height: 248 }}>
               <Image src={photos06} alt="Imagem hidrossemeadura" />
             </div>
           </Images>
@@ -59,24 +64,24 @@ export default function Fotos(props: any) {
         </div>
         <ImagesContent>
           <Images>
-            <div style={{ width: 482, height: 596 }}>
+            <div style={width > 500 ? { width: 482, height: 596 } : { width: 156, height: 206 } }>
               <Image src={photos08} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={{ width: 482, height: 596 }}>
+            <div style={width > 500 ? { width: 482, height: 596 } : { width: 156, height: 206 } }>
               <Image src={photos10} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={{ width: 482, height: 601 }}>
+            <div style={width > 500 ? { width: 482, height: 601 } : {width: 156, height: 206 }}>
               <Image src={photos12} alt="Imagem hidrossemeadura" />
             </div>
           </Images>
           <Images>
-            <div style={{ width: 600, height: 822 }}>
+            <div style={width > 500 ? { width: 600, height: 822 } : { width: 156, height: 290 }}>
               <Image src={photos09} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={{ width: 600, height: 470}}>
+            <div style={width > 500 ? { width: 600, height: 470 } : { width: 156, height: 122 }}>
               <Image src={photos11} alt="Imagem hidrossemeadura" />
             </div>
-            <div style={{ width: 600, height: 487, }}>
+            <div style={width > 500 ? { width: 600, height: 487 } : { width: 156, height: 206 }}>
               <Image src={photos13} alt="Imagem hidrossemeadura" />
             </div>
           </Images>
@@ -97,6 +102,10 @@ const Wrapper = styled.main`
 const Content = styled.div`
   margin: 236px auto 0 auto;
   width: 1100px;
+
+  @media only screen and (max-width: 500px) {
+    width: 329px;
+  }
 `
 
 const Title = styled.h1`
@@ -105,16 +114,30 @@ const Title = styled.h1`
   line-height: 42px;
   margin-bottom: 96px;
   color: ${p => p.theme.attentionForeground};
+
+  @media only screen and (max-width: 500px) {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+  }
 `
 
 const ImagesContent = styled.div`
   display: flex;
   flex-direction: row;
   gap: 18px;
+
+  @media only screen and (max-width: 500px) {
+    gap: 12px
+  }
 `
 
 const Images = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media only screen and (max-width: 500px) {
+    gap: 12px
+  }
 `

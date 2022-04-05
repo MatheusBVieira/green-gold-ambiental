@@ -10,8 +10,6 @@ import useWindowDimensions from "../utils/WindowDimensions";
 export default function Footer(Props: any) {
     const { width } = useWindowDimensions();
 
-    console.log(width)
-    
     return (
         <Wrapper>
             <Content>
