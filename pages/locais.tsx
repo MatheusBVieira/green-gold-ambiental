@@ -26,9 +26,9 @@ export default function Locais(props: any) {
                 }
                 rightStyle={Right}
                 right={
-                    <>
+                    <WrapperRight>
                         <Locals />
-                    </>
+                    </WrapperRight>
                 }>
             </InfoContent>
         </Wrapper>
@@ -40,6 +40,10 @@ export default function Locais(props: any) {
 
 const Wrapper = styled.main`
     margin-top: 216px;
+
+    @media only screen and (max-width: 500px) {
+        margin-top: 100px;
+    }
 `
 
 const Content = styled.div`
@@ -52,6 +56,9 @@ const Left = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    @media only screen and (max-width: 500px) {
+    }
 `
 
 const WrapperLeft = styled.div`
@@ -61,6 +68,12 @@ const WrapperLeft = styled.div`
 
     strong {
         color: #EA1818;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 500px) {
+        align-self: center;
+        margin-right: 0px;
     }
 
 `
@@ -71,6 +84,12 @@ const Title = styled.h1`
     line-height: 42px;
     color: ${p => p.theme.attentionForeground};
     margin-bottom: 36px;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
 `
 
 const Paragraph = styled.span`
@@ -78,10 +97,28 @@ const Paragraph = styled.span`
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+    }
 `
 
 const Right = styled.div`
     margin-top: -100px;
     /* margin-left: -70px; */
+
+    @media only screen and (max-width: 500px) {
+        margin-top: -306px;
+    }
+`
+
+const WrapperRight = styled.div`
+    @media only screen and (max-width: 500px) {
+        width: 338px;
+        height: 271px;
+        margin: 0 auto
+    }
 `
 
