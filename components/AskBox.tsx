@@ -27,11 +27,20 @@ const Wrapper = styled.div<{ isHidden: boolean }>`
     border-bottom: ${p => p.isHidden ? "2px solid #66BB6A" : ""};
     cursor: pointer;
     margin-bottom: 64px;
+
+    @media only screen and (max-width: 500px) {
+        width: 328px;
+        margin: 0 auto 32px auto;
+    }
 `
 const TextIconWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 48px;
+
+    @media only screen and (max-width: 500px) {
+        margin-bottom: 22px;
+    }
 `
 
 const Text = styled.span<{ isHidden: boolean }>`
@@ -42,6 +51,13 @@ const Text = styled.span<{ isHidden: boolean }>`
     color: ${p => p.isHidden ? "#000" : transparentize(0.3, p.theme.attentionForeground)};
 
     transition: all .3s linear;
+
+    @media only screen and (max-width: 500px) {
+        max-width: 302px;
+
+        font-size: 14px;
+        line-height: 17px;
+    }
 `
 
 const IconWrapper = styled.div`
@@ -58,8 +74,13 @@ const ResponseWrapper = styled.div<{ isHidden: boolean }>`
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: ${p => p.theme.primaryBackground};
+    border-radius: 4px;
 
     transition: all .5s linear;
+
+    @media only screen and (max-width: 500px) {
+
+    }
 `
 
 const Paragraph = styled.p<{ isHidden: boolean }>`
@@ -70,4 +91,10 @@ const Paragraph = styled.p<{ isHidden: boolean }>`
     line-height: 30px;
 
     visibility: ${p => p.isHidden ? "hidden" : "visible"};
+
+    @media only screen and (max-width: 500px) {
+        padding: 14px 16px 14px 16px;
+        font-size: 11px;
+        line-height: 20px;
+    }
 `

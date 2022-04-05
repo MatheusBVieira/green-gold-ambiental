@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Checked from "../public/icons/Checked.icon";
 import RightArrow from "../public/icons/RightArrow.icon";
 
 export interface InfoContentProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -20,6 +19,11 @@ const Wrapper = styled.div`
     align-items: center;
     align-content: flex-start;
     margin-bottom: 16px;
+
+    @media only screen and (max-width: 500px) {
+        margin-left: 16px;
+        margin-bottom: 20px;
+    }
 `
 
 const Text = styled.span`
@@ -30,4 +34,13 @@ const Text = styled.span`
     font-size: 18px;
     line-height: 30px;
     color: ${p => p.theme.pageForeground};
+
+    @media only screen and (max-width: 500px) {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+
+        max-width: 304px;
+        margin-left: 8px;
+    }
 `

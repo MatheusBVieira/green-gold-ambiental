@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import CheckedText from "../components/CheckedText";
 import InfoContent from "../components/InfoContent";
+import useWindowDimensions from "../utils/WindowDimensions";
 
-export default function Beneficios(props: any) {
-
+export default function Benefits(props: any) {
 
     return (
         <InfoContent
@@ -45,6 +45,17 @@ const Subtitle = styled.h2`
     font-size: 40px;
     line-height: 47px;
     text-align: center;
+
+    @media only screen and (max-width: 500px) {
+        max-width: 200px;
+        margin: 0 auto;
+        padding-top: 30px;
+        padding-bottom: 26px;
+
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+    }
 `
 
 const Attention = styled.strong`
@@ -58,6 +69,15 @@ const WrapperLeft = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media only screen and (max-width: 500px) {
+        width: 100%;
+
+        justify-content: flex-start;
+        gap: 24px;
+
+
+    }
 `
 
 const Left = styled.div`
@@ -65,6 +85,11 @@ const Left = styled.div`
     flex-direction: column;
     margin: auto 0 auto 0;
     height: 386px;
+
+    @media only screen and (max-width: 500px) {
+        height: auto;
+        margin: 0 auto;
+    }
 `
 
 const Right = styled.div`
@@ -73,4 +98,10 @@ const Right = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media only screen and (max-width: 500px) {
+        justify-content: flex-start;
+        gap: 24px;
+        margin: 24px auto 0 auto;
+    }
 `

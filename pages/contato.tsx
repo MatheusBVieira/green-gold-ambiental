@@ -6,7 +6,7 @@ import Input from '../components/Input'
 import TextSelect from '../components/TextSelect'
 import TextArea from '../components/TextArea'
 import emailjs, { init } from '@emailjs/browser';
-import {IsEmail, verifyEmpty} from '../utils/validate';
+import {verifyEmpty} from '../utils/validate';
 import { useRouter } from 'next/router';
 
 export async function sendEmailExternal(formCurrent: any, router: any) {
@@ -191,6 +191,14 @@ const Title = styled.h1`
     font-size: 36px;
     line-height: 42px;
     color: ${p => p.theme.attentionForeground};
+
+    @media only screen and (max-width: 900px) {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 21px;
+
+        margin-bottom: 40px;
+    }
 `
 
 const Content = styled.div`
@@ -201,11 +209,14 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: 500px) {
+        margin-top: 100px;
+    }
 `
 
 const FormWrapper = styled.form`
-    width: 770px;
-    height: 1420px;
+    width: 54%;
     padding-top: 80px;
     margin-bottom: 150px;
     background-color: ${p => transparentize(0.2 , p.theme.primaryBackground)};
@@ -215,16 +226,46 @@ const FormWrapper = styled.form`
     align-items: center;
     gap: 22px;
     border-radius: 10px;
+
+    @media only screen and (max-width: 1300px) {
+        width: 70%;
+    }
+
+    @media only screen and (max-width: 900px) {
+        width: calc(100% - 32px);
+    }
+
+    @media only screen and (max-width: 500px) {
+        gap: 14px;
+        padding-top: 38px;
+    }
 `
 
 const Button = styled.button`
     padding: 28px 68px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+
     background-color: ${p => p.theme.attentionForeground};
     color: ${p => p.theme.primaryForeground};
+
     font-weight: 500;
     font-size: 22px;
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
-    margin-top: 40px;
+    
+    border-radius: 10px;
+
+    @media only screen and (max-width: 500px) {
+        padding: 12px 32px;
+        margin-top: 26px;
+        margin-bottom: 32px;
+
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+
+        border-radius: 5px;
+    }
 `
