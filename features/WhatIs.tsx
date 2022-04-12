@@ -26,7 +26,6 @@ export default function WhatIs(props: any) {
 }
 
 const Wrapper = styled.div`
-    background-image: url('/images/backgroundWhatIsMob.svg');
     background-size: cover;
 `
 
@@ -40,12 +39,11 @@ const Title = styled.h2`
     line-height: 48px;
 
     @media only screen and (max-width: 500px) {
-        font-weight: 600;
         font-size: 24px;
         line-height: 29px;
 
         padding-left: 16px;
-        color: ${p => p.theme.primaryForeground};
+        color: ${p => p.theme.pageForeground};
     }
 `
 
@@ -61,15 +59,15 @@ const Paragraph = styled.p`
     height: 269px;
 
     @media only screen and (max-width: 500px) {
-        width: 311px;
+        width: 86%;
         height: 373px;
 
         font-weight: 600;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 36px;
 
         margin: 36px auto 0 auto;
-        color: ${p => p.theme.primaryForeground};
+        color: ${p => p.theme.pageForeground};
     }
 `
 
@@ -90,6 +88,6 @@ const Right = styled.div`
     display: flex;
 
     @media only screen and (max-width: 500px) {
-        margin-top: 110px;
+        margin-top: 90px;
     }
 `
