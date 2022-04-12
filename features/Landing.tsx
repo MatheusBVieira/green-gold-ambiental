@@ -80,7 +80,6 @@ const HomeWrapper = styled.div`
     @media only screen and (max-width: 500px) {
       padding: 12px 28px;
 
-      font-weight: 600;
       font-size: 14px;
       line-height: 17px;
     } 
@@ -97,6 +96,8 @@ const Title = styled.h1`
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
+
+    max-width: 92%;
   }
 `
 

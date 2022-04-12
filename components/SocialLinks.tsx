@@ -14,7 +14,7 @@ export default function SocialLinks(props: SocialLinksProps) {
     
     return (
         <Wrapper local={props.local} isDesk={props.isDesk}>
-            <a href="https://api.whatsapp.com/send?phone=5548999130310" target="_blank" rel="noreferrer">
+            <a href="https://api.whatsapp.com/send?phone=5548988007553" target="_blank" rel="noreferrer">
                 {props.local === 'footer' ? <WhatsAppSmall /> : <WhatsApp isDesk={props.isDesk} />}
             </a>
             <a href="https://www.instagram.com/greengoldambiental/" target="_blank" rel="noreferrer">
