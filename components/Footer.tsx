@@ -18,7 +18,7 @@ export default function Footer(Props: any) {
                         <Call />
                         <PhoneWrapper>
                             <span>Telefones:</span>
-                            <span>+55 (48) 48 9 8800-7553</span>
+                            <span>+55 (48) 9 8800-7553</span>
                         </PhoneWrapper>
                     </IconContentWrapper>
                     <IconContentWrapper>
