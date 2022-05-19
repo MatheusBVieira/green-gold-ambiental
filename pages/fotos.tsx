@@ -1,14 +1,11 @@
-import { withCoalescedInvoke } from 'next/dist/lib/coalesced-function';
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRouter } from 'next/router';
 import styled from 'styled-components'
 import photos01 from '../public/images/photosPage/photos01.svg';
 import photos02 from '../public/images/photosPage/photos02.svg';
 import photos03 from '../public/images/photosPage/photos03.svg';
 import photos04 from '../public/images/photosPage/photos04.svg';
 import photos05 from '../public/images/photosPage/photos05.svg';
-import photos05Mob from '../public/images/photosPage/photos05Mob.svg';
 import photos06 from '../public/images/photosPage/photos06.svg';
 import photos07 from '../public/images/photosPage/photos07.svg';
 import photos08 from '../public/images/photosPage/photos08.svg';
@@ -18,7 +15,6 @@ import photos11 from '../public/images/photosPage/photos11.svg';
 import photos12 from '../public/images/photosPage/photos12.svg';
 import photos13 from '../public/images/photosPage/photos13.svg';
 import photos14 from '../public/images/photosPage/photos14.svg';
-import useWindowDimensions from '../utils/WindowDimensions';
 
 
 export default function Fotos(props: any) {
