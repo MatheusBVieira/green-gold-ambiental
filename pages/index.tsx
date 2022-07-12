@@ -1,10 +1,15 @@
 import Head from 'next/head'
+import { useEffect } from 'react';
 import styled from 'styled-components'
+import { analytics } from '../utils/Analytics';
 import HomeContent from '../views/HomeContent.view'
 
 
 
 export default function Home(props: any) {
+  useEffect(() => {
+    analytics(window, document, 'script', 'dataLayer', 'GTM-53RNS5M');
+  })
 
   return (
     <Wrapper>

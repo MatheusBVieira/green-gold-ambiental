@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import InfoContent from '../components/InfoContent'
-import OQueEHidrossemeadura from '../public/images/WhatIs.image'
 
 export default function WhatIs(props: any) {
     return (
@@ -11,7 +10,7 @@ export default function WhatIs(props: any) {
                 height={100}
                 leftStyle={Left}
                 left={ 
-                    <OQueEHidrossemeadura />
+                    <ImageContent />
                 }
                 rightStyle={Right}
                 right={
@@ -31,6 +30,16 @@ const Wrapper = styled.div`
 
 const RightContent = styled.div`
     width: 100%;
+`
+
+const ImageContent = styled.div`
+    width: 338px;
+    height: 450px;
+    overflow: hidden;
+    background-image: url('/images/WhatIs.svg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 `
 
 const Title = styled.h2`

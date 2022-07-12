@@ -1,7 +1,8 @@
+import Image from 'next/image'
 import styled from "styled-components";
 import InfoContent from '../components/InfoContent'
 import RightArrowText from "../components/RightArrowText";
-import QuemUsaImage from '../public/images/WhoUse.image'
+import whoUse from '../public/images/WhoUse.svg';
 
 export default function WhoUse(props: any) {
     return (
@@ -12,9 +13,7 @@ export default function WhoUse(props: any) {
             left={
                 <WrapperLeft>
                     <Title><strong>Quem usa</strong> <br />hidrossemeadura?</Title>
-                    <ImageContent>
-                        <QuemUsaImage />
-                    </ImageContent>
+                    <ImageContent />
                 </WrapperLeft>
             }
             rightStyle={Right}
@@ -68,6 +67,14 @@ const Title = styled.h2`
 `
 
 const ImageContent = styled.div`
+    width: 485px;
+    height: 339px;
+    overflow: hidden;
+    background-image: url('/images/WhoUse.svg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    
     @media only screen and (max-width: 500px) {
         display: none;
     }

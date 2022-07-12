@@ -1,9 +1,14 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
+import { analytics } from '../utils/Analytics';
 import styled from 'styled-components'
 import InfoContent from '../components/InfoContent'
 import Locals from '../public/images/Locals.image'
 
 export default function Locais(props: any) {
+    useEffect(() => {
+        analytics(window, document, 'script', 'dataLayer', 'GTM-53RNS5M');
+    })
 
     return (
         <Wrapper>
