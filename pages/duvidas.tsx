@@ -1,8 +1,14 @@
 import Head from 'next/head'
+import { useEffect } from 'react';
 import styled from "styled-components"
 import AskBox from "../components/AskBox"
+import { analytics } from '../utils/Analytics';
 
-export default function duvidas(props: any) {
+export default function Duvidas(props: any) {
+    useEffect(() => {
+        analytics(window, document, 'script', 'dataLayer', 'GTM-53RNS5M');
+    })
+
     return (
         <Wrapper>
             <Head>
