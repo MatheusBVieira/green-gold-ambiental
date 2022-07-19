@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 import * as gtag from '../lib/gtag'
 
 export async function sendEmailExternal(formCurrent: any, router: any) {
-    emailjs.sendForm(String(process.env.SERVICE_ID), String(process.env.TEMPLATE_ID), formCurrent, process.env.USER_ID)
+    emailjs.sendForm(String('service_35fneyj'), String('template_kkq0j5w'), formCurrent, 'mzFQKXmrLDgJ_G54E')
         .then((result) => {
             alert('Email enviado com sucesso! Você será redirecionado para Home.');
             router.push('/');
