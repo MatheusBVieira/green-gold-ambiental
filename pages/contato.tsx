@@ -8,6 +8,7 @@ import TextArea from '../components/TextArea'
 import emailjs, { init } from '@emailjs/browser';
 import {verifyEmpty} from '../utils/validate';
 import { useRouter } from 'next/router';
+import * as gtag from '../lib/gtag'
 
 export async function sendEmailExternal(formCurrent: any, router: any) {
     emailjs.sendForm(String(process.env.SERVICE_ID), String(process.env.TEMPLATE_ID), formCurrent, process.env.USER_ID)
@@ -66,6 +67,13 @@ export default function Contato(props: any) {
         }
         
         if (error) return;
+
+        gtag.event({
+            action: 'submit_form',
+            category: 'Contact',
+            label: message,
+            value: null
+        })
         
         sendEmailExternal(form.current, router);
     };
