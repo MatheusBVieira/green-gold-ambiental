@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Head from 'next/head'
 import { transparentize } from 'polished'
 import styled from "styled-components"
@@ -8,10 +8,10 @@ import TextArea from '../components/TextArea'
 import emailjs, { init } from '@emailjs/browser';
 import {verifyEmpty} from '../utils/validate';
 import { useRouter } from 'next/router';
-import { analytics } from '../utils/Analytics';
+import * as gtag from '../lib/gtag'
 
 export async function sendEmailExternal(formCurrent: any, router: any) {
-    emailjs.sendForm(String(process.env.SERVICE_ID), String(process.env.TEMPLATE_ID), formCurrent, process.env.USER_ID)
+    emailjs.sendForm(String('service_35fneyj'), String('template_kkq0j5w'), formCurrent, 'mzFQKXmrLDgJ_G54E')
         .then((result) => {
             alert('Email enviado com sucesso! Você será redirecionado para Home.');
             router.push('/');
@@ -38,10 +38,6 @@ export default function Contato(props: any) {
     const [interest, setInterest] = useState("");
     const [selectInterestIsValid, setSelectInterestIsValid] = useState(true);
     const [selectStateIsValid, setSelectStateIsValid] = useState(true);
-
-    useEffect(() => {
-        analytics(window, document, 'script', 'dataLayer', 'GTM-53RNS5M');
-    })
 
     function maskPhone(value: string) {
         return value
@@ -71,6 +67,13 @@ export default function Contato(props: any) {
         }
         
         if (error) return;
+
+        gtag.event({
+            action: 'submit_form',
+            category: 'Contact',
+            label: message,
+            value: null
+        })
         
         sendEmailExternal(form.current, router);
     };
