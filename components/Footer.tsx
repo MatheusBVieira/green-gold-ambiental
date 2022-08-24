@@ -37,7 +37,7 @@ export default function Footer(Props: any) {
                     </IconContentWrapper>
                     <CpnjInfo>Green Gold Ambiental.<br />CNPJ:40.403.9000/0001-02</CpnjInfo>
                 </InfoWrapper>
-                {width < 700 ? '' : <SocialLinks local="landing" isDesk={true} />}
+                {width < 700 ? '' : <SocialLinks local="landing" isdesk={true} />}
             </Content>
             {width < 700 ? <SocialLinks local="footer" /> : '' }
         </Wrapper>

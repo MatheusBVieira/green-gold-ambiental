@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect } from 'react';
 import styled from 'styled-components'
 import photos01 from '../public/images/photosPage/photos01.svg';
 import photos02 from '../public/images/photosPage/photos02.svg';
@@ -16,13 +15,9 @@ import photos11 from '../public/images/photosPage/photos11.svg';
 import photos12 from '../public/images/photosPage/photos12.svg';
 import photos13 from '../public/images/photosPage/photos13.svg';
 import photos14 from '../public/images/photosPage/photos14.svg';
-import { analytics } from '../utils/Analytics';
 
 
 export default function Fotos(props: any) {
-  useEffect(() => {
-    analytics(window, document, 'script', 'dataLayer', 'GTM-53RNS5M');
-  })
 
   return (
     <Wrapper>
